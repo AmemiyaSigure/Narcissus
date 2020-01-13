@@ -1,0 +1,2 @@
+dotnet ef dbcontext scaffold "Server=localhost;Database=Narcissus;Uid=root;Pwd=123456;" MySql.Data.EntityFrameworkCore -o DbModels
+dotnet ef dbcontext scaffold "Server=localhost;Database=Narcissus;Uid=root;Pwd=123456;" Pomelo.EntityFrameworkCore.MySql -o DbModels -f

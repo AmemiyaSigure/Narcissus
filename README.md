@@ -1,2 +1,2 @@
-# Narcissus
-[WIP]Narcissus user system. (CAS)
+# Narcissus (WIP)
+Narcissus user system (CAS).
