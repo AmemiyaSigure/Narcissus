@@ -13,7 +13,7 @@ namespace Narcissus
     {
         public static readonly string Name = "Narcissus";
         public static readonly string Author = "Amemiya Shigure";
-        public static readonly string Version = "1.2.0";
+        public static readonly string Version = "1.2.1";
 
         public static void Main(string[] args)
         {

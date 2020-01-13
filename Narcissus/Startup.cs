@@ -8,6 +8,7 @@ using Microsoft.Extensions.Hosting;
 using Narcissus.DbModels;
 using NLog;
 using reCAPTCHA.AspNetCore;
+using System.Threading.Tasks;
 
 namespace Narcissus
 {
@@ -55,11 +56,26 @@ namespace Narcissus
                 app.UseDeveloperExceptionPage();
             }
 
-            // app.UseHttpsRedirection();
+            app.Use(next =>
+            {
+                return async context =>
+                {
+                    context.Response.OnStarting(() =>
+                    {
+                        context.Response.Headers["Server"] = Program.Name;
+                        context.Response.Headers.Add("Author", Program.Author);
+
+                        return Task.CompletedTask;
+                    });
+                    await next(context);
+                };
+            });
+
+            //app.UseHttpsRedirection();
 
             app.UseRouting();
 
-            app.UseAuthorization();
+            //app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
