@@ -33,6 +33,7 @@ namespace Narcissus
             RecaptchaService.UseRecaptchaNet = true;
 
             // Database config.
+            Logger.Info("Loading database...");
             services.AddDbContext<NarcissusContext>(option =>
             {
                 option.UseMySql($"Server={Configuration["Database:IP"]};Port={Configuration["Database:Port"]};Uid={Configuration["Database:Username"]};Pwd={Configuration["Database:Password"]};DataBase={Configuration["Database:Name"]};");
