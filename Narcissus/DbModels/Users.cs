@@ -13,6 +13,6 @@ namespace Narcissus.DbModels
         public string PhoneCountryCode { get; set; }
         public string Phone { get; set; }
         public string Email { get; set; }
-        public bool Status { get; set; }
+        public byte Status { get; set; }
     }
 }

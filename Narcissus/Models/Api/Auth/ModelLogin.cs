@@ -12,6 +12,10 @@ namespace Narcissus.Models.Api.Auth
         [Required]
         public string Password { get; set; }
 
-        public string GoogleToken { get; set; }
+        [Required]
+        [Uuid]
+        public string ClientToken { get; set; }
+
+        //public string GoogleToken { get; set; }
     }
 }

@@ -12,6 +12,6 @@ namespace Narcissus.DbModels
         public string ClientIp { get; set; }
         public long IssueTime { get; set; }
         public long ExpireTime { get; set; }
-        public bool Status { get; set; }
+        public byte Status { get; set; }
     }
 }

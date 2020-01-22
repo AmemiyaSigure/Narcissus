@@ -252,7 +252,9 @@ namespace Narcissus.DbModels
                     .HasColumnType("bigint(20)")
                     .HasComment("令牌颁发时间");
 
-                entity.Property(e => e.Status).HasComment("令牌状态");
+                entity.Property(e => e.Status)
+                    .HasColumnType("tinyint(1)")
+                    .HasComment("令牌状态");
 
                 entity.Property(e => e.UserId)
                     .HasColumnName("UserID")
@@ -309,7 +311,9 @@ namespace Narcissus.DbModels
                     .HasCharSet("utf8mb4")
                     .HasCollation("utf8mb4_general_ci");
 
-                entity.Property(e => e.Status).HasComment("用户状态");
+                entity.Property(e => e.Status)
+                    .HasColumnType("tinyint(1)")
+                    .HasComment("用户状态");
 
                 entity.Property(e => e.Username)
                     .IsRequired()
